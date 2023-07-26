@@ -11,7 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * <p>
@@ -32,9 +34,11 @@ public class MonitorApikeyController {
     @ApiOperation("获取所有的apikey")
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     @ResponseBody
-    public ResponseEntity<CommonResult<List<MonitorApikey>>> getList() {
+    public ResponseEntity<CommonResult<Map<String, Object>>> getList() {
         List<MonitorApikey> monitorApikeyList = monitorApikeyService.list();
-        return CommonResult.success(monitorApikeyList);
+        Map<String, Object> res = new HashMap<>();
+        res.put("list", monitorApikeyList);
+        return CommonResult.success(res);
     }
 
     @ApiOperation("添加apikey")

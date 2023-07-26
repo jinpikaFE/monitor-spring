@@ -3,15 +3,17 @@ package com.macro.mall.tiny.modules.monitor.model;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import java.io.Serializable;
+import com.macro.mall.tiny.common.model.CommModel;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.io.Serializable;
+
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author macro
@@ -21,7 +23,7 @@ import lombok.Setter;
 @Setter
 @TableName("monitor_apikey")
 @ApiModel(value = "MonitorApikey对象", description = "")
-public class MonitorApikey implements Serializable {
+public class MonitorApikey extends CommModel implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
