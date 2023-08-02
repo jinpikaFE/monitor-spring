@@ -19,7 +19,7 @@ import java.nio.file.Paths;
 @Api(tags = "FileController")
 @Tag(name = "文件处理", description = "文件处理")
 @RestController
-@RequestMapping("/files")
+@RequestMapping("/api/v1/files")
 public class FileController {
 
     @ApiOperation("根据文件名获取文件")
